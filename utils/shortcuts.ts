@@ -1,7 +1,6 @@
 import { User } from "../types/common";
 import Mousetrap from "mousetrap";
 import { copyImage, copyPublicLink, download } from "./exports";
-import { isSignedIn, signIn, signOut } from "./supabase";
 import { isMacOS } from "./utils";
 
 // To use ⌘ on MacOS and ctrl on Windows/Linux
@@ -32,19 +31,6 @@ export const SHORTCUTS = {
     method: async (e, user) => {
       e.preventDefault();
       copyPublicLink(user);
-    },
-  },
-  signIn: {
-    sequence: "s",
-    method: async (e, user) => {
-      e.preventDefault();
-      // Ignore if already signed in
-      let signedIn = await isSignedIn();
-      if (!signedIn) signIn();
-      else {
-        signOut();
-        window.location.reload();
-      }
     },
   },
   konami: {

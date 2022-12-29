@@ -8,7 +8,7 @@ Welcome!
 
 - Ensure you have [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) installed
 - Clone or fork the repo
-- Add a **.env** file, make a [Supabase account](https://supabase.com/), add a database, and add its key following **.sample-env**.
+- Add a **.env** file following **.sample-env**.
 - `yarn install` to install dependencies
 - `yarn dev` to run the app at **localhost:3000/**
 - Sign in from the browser at `localhost:3000`

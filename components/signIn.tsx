@@ -1,5 +1,4 @@
 import React from "react";
-import { signIn, signOut } from "../utils/supabase";
 import KeyboardShortcut from "./shortcut";
 
 /**
@@ -13,13 +12,7 @@ function SignIn({ auth, setAuth }) {
     <div className="sticky py-10 text-center">
       <span className={`absolute ${auth ? "" : "backdrop-glow-reactive"}`} />
       <button
-        onClick={() => {
-          if (!auth) signIn();
-          else {
-            signOut();
-            setAuth(null);
-          }
-        }}
+        onClick={() => {}}
         className={`z-50 mx-auto transition bg-indigo-700 hover:bg-indigo-600 text-white p-4 rounded-md focus:outline-dotted`}
       >
         <span className="px-6 font-medium text-base">

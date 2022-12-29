@@ -1,6 +1,5 @@
 import { User } from "../types/common";
 import { getByUsername, retakeScreenshot } from "../utils/exports";
-import { updateValue } from "../utils/supabase";
 import { Cross1Icon } from "@modulz/radix-icons";
 import React from "react";
 import Tooltip from "./tooltip";
@@ -23,14 +22,6 @@ function Hide({ stat, user, hidden, setHidden }: IProps) {
     if (checkUser) {
       // Retake screenshot for link preview
       retakeScreenshot(user);
-
-      // For the Highlight component, there are multiple props to be deleted
-      if (stat == "commits") {
-        ["commits", "pulls", "contributions", "repos", "reviews"].map(
-          (column: keyof User) =>
-            updateValue("users", column, null, user.username)
-        );
-      } else updateValue("users", stat, null, user.username);
     }
   }
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { isSignedIn } from "../utils/supabase";
 import Slideshow from "../components/slideshow";
 import HeadTags from "../components/headTags";
 import SignIn from "../components/signIn";
@@ -43,7 +42,7 @@ export default function Home({ hostUser }) {
 
   // Check if user is signed in
   async function checkUser() {
-    const auth = await isSignedIn();
+    const auth = true;
     if (auth) setAuth(auth);
   }
 
@@ -108,10 +107,7 @@ export default function Home({ hostUser }) {
         )}
       </div>
 
-      <Script
-        data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
-        src="https://umami.neat.run/umami.js"
-      />
+      <Script src="https://umami.neat.run/umami.js" />
 
       <Footer />
     </div>

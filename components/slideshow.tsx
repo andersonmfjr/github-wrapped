@@ -160,7 +160,7 @@ function Slideshow({ user, hidden, setHidden }: Props) {
           <div
             id="wrap"
             ref={tilt}
-            className="pt-12 px-5 sm:p-10 bg-black w-screen sm:w-auto sm:min-w-[800px]"
+            className="pt-12 pb-6 px-5 sm:p-10 bg-black w-screen sm:w-auto sm:min-w-[800px]"
           >
             <Background currentSlide={currentSlide} />
             <div className="flex items-center justify-center min-h-[600px] rounded-lg bg-gray-900/80 backdrop-blur-3xl">
